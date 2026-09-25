@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Annie's Closet | Buyer Portal</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="card brand">
+      <div class="logo">AC</div>
+      <div><h1>Annie's Closet</h1><p>Secure Buyer Portal</p></div>
+    </section>
+    <section id="loginCard" class="card">
+      <h2>Verify your Messenger</h2>
+      <p id="loginIntro">Open this page from the link sent by Annie's Closet in Facebook Messenger.</p>
+      <div id="claimField" class="hidden">
+        <label>Buyer name</label>
+        <input id="buyerName" autocomplete="name" placeholder="Enter the name used for your order" />
+        <p class="hint">For first-time accounts, Annie's Closet will approve the Messenger-to-buyer link before balances become visible.</p>
+      </div>
+      <button id="sendCode">Send code to Messenger</button>
+      <div id="otpArea" class="hidden">
+        <label>6-digit code</label>
+        <input id="otp" inputmode="numeric" maxlength="6" placeholder="000000" />
+        <button id="verifyCode">Verify & sign in</button>
+      </div>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+    <section id="accountCard" class="card hidden">
+      <div class="row"><div><p class="eyebrow">ACCOUNT</p><h2 id="buyerGreeting"></h2></div><button class="secondary" onclick="location.reload()">Refresh</button></div>
+      <div class="balance"><span>Remaining balance</span><strong id="balance">₱0.00</strong></div>
+      <h3>Items</h3><div id="items"></div>
+      <h3>Payments</h3><div id="payments"></div>
+    </section>
+    <section id="paymentCard" class="card hidden">
+      <h2>Send payment receipt</h2>
+      <form id="paymentForm">
+        <label>Amount paid (PHP)</label><input name="amount" type="number" min="1" step="0.01" required />
+        <label>Receipt image</label><input name="receipt" type="file" accept="image/*" required />
+        <button>Submit receipt for approval</button>
+      </form><p id="payMsg" class="msg"></p>
+    </section>
+    <section id="addressCard" class="card hidden">
+      <h2>Delivery address</h2>
+      <p>Your address form opens after an admin approves a payment.</p>
+      <form id="addressForm">
+        <label>Recipient name</label><input name="recipientName" required />
+        <label>Mobile number</label><input name="mobile" required />
+        <label>House / street / subdivision</label><input name="addressLine" required />
+        <label>Barangay</label><input name="barangay" />
+        <label>City / municipality</label><input name="city" required />
+        <label>Province</label><input name="province" required />
+        <label>Postal code</label><input name="postalCode" />
+        <button>Save delivery address</button>
+      </form><p id="addressMsg" class="msg"></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
