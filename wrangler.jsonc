@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "annies-closet-buyer-portal",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-26",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "annies-closet",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "RECEIPTS",
+      "bucket_name": "annies-closet-receipts"
+    }
+  ],
+  "vars": {
+    "APP_URL": "https://REPLACE_WITH_YOUR_DOMAIN",
+    "META_GRAPH_VERSION": "v24.0",
+    "SESSION_HOURS": "12",
+    "OTP_MINUTES": "10"
+  }
+}
